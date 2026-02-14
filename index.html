@@ -8,6 +8,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Optional: Font Awesome icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Lightbox CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
   <!-- Custom styles -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -37,7 +39,7 @@
 
   <!-- ==== HERO ==== -->
   <section id="hero" class="vh-100 d-flex align-items-center justify-content-center text-center text-white"
-    style="background: url('Entrance.jpg') center/cover no-repeat;">
+    style="background: url('assets/img/Entrance.jpg') center/cover no-repeat;">
     <div class="container">
       <h1 class="display-4 fw-bold">Welcome to Barefoot Homestays</h1>
       <p class="lead mb-4">Relax, unwind, and feel right at home in our peaceful mountain retreat.</p>
@@ -53,7 +55,7 @@
       <p class="lead text-center">Our family‑run homestay offers a warm welcome, fresh breakfast, and easy access to hiking trails.</p>
       <div class="row align-items-center mt-4">
         <div class="col-md-5">
-          <img src="Living Room_5.jpg" alt="Living Room" class="img-fluid rounded shadow">
+          <img src="assets/img/Living Room_5.jpg" alt="Living Room" class="img-fluid rounded shadow">
         </div>
         <div class="col-md-7">
           <p>Located just 10 minutes from the town centre, Barefoot Homestays provides a tranquil escape. Each room is designed with comfort in mind, featuring <strong>organic linens, fast Wi‑Fi, and panoramic views</strong>. Whether you're traveling solo, as a couple, or with family, we have the perfect space for you.</p>
@@ -71,7 +73,7 @@
         <!-- ROOM 1 -->
         <div class="col-md-4">
           <div class="card h-100 shadow-sm">
-            <img src="Bedroom.jpg" class="card-img-top" alt="Cozy double room">
+            <img src="assets/img/Bedroom.jpg" class="card-img-top" alt="Cozy double room">
             <div class="card-body">
               <h5 class="card-title">Cozy Double</h5>
               <p class="card-text">A comfortable double bed, private balcony, and garden view.</p>
@@ -160,32 +162,32 @@
       <h2 class="text-center mb-5">Photo Gallery</h2>
       <div class="row g-3">
         <div class="col-6 col-sm-4 col-lg-3">
-          <a href="assets/img/Entrance.jpg" data-bs-toggle="lightbox">
+          <a href="assets/img/Entrance.jpg" data-toggle="lightbox">
             <img src="assets/img/Entrance.jpg" class="img-fluid rounded" alt="Entrance">
           </a>
         </div>
         <div class="col-6 col-sm-4 col-lg-3">
-          <a href="assets/img/Bathroom.jpg" data-bs-toggle="lightbox">
+          <a href="assets/img/Bathroom.jpg" data-toggle="lightbox">
             <img src="assets/img/Bathroom.jpg" class="img-fluid rounded" alt="Bathroom">
           </a>
         </div>
         <div class="col-6 col-sm-4 col-lg-3">
-          <a href="assets/img/tub.jpg" data-bs-toggle="lightbox">
+          <a href="assets/img/tub.jpg" data-toggle="lightbox">
             <img src="assets/img/tub.jpg" class="img-fluid rounded" alt="Bath tub">
           </a>
         </div>
         <div class="col-6 col-sm-4 col-lg-3">
-          <a href="assets/img/R_R09485.jpg" data-bs-toggle="lightbox">
+          <a href="assets/img/R_R09485.jpg" data-toggle="lightbox">
             <img src="assets/img/R_R09485.jpg" class="img-fluid rounded" alt="Room view">
           </a>
         </div>
         <div class="col-6 col-sm-4 col-lg-3">
-          <a href="assets/img/2.jpg" data-bs-toggle="lightbox">
+          <a href="assets/img/2.jpg" data-toggle="lightbox">
             <img src="assets/img/2.jpg" class="img-fluid rounded" alt="Interior">
           </a>
         </div>
         <div class="col-6 col-sm-4 col-lg-3">
-          <a href="assets/img/Living Room_5.jpg" data-bs-toggle="lightbox">
+          <a href="assets/img/Living Room_5.jpg" data-toggle="lightbox">
             <img src="assets/img/Living Room_5.jpg" class="img-fluid rounded" alt="Living Room">
           </a>
         </div>
@@ -200,8 +202,10 @@
       <p class="text-center mb-4">123 Mountain Road, Alpine Village, Country – 5 km from the town centre.</p>
 
       <!-- Google Maps Embed -->
+      <!-- TODO: Replace with actual Google Maps embed URL for your location -->
+      <!-- Get embed code from: https://www.google.com/maps -->
       <div class="ratio ratio-16x9">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.098..." allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.098" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </div>
   </section>
@@ -212,6 +216,7 @@
       <h2 class="text-center mb-4">Get In Touch / Book</h2>
 
       <!-- Simple Form via Formspree (no backend needed) -->
+      <!-- TODO: Sign up at https://formspree.io and replace 'your-form-id' with your actual form ID -->
       <form action="https://formspree.io/f/your-form-id" method="POST" class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
           <label for="name" class="form-label">Your Name</label>
@@ -239,7 +244,7 @@
   <section class="social-media py-5 bg-light">
     <div class="container text-center">
       <h2 class="mb-4">Follow Us</h2>
-      <a href="https://www.facebook.com/people/Barefoot-Homestays/100090769633894/#" target="_blank" class="btn btn-outline-primary btn-lg me-3">
+      <a href="https://www.facebook.com/people/Barefoot-Homestays/100090769633894/" target="_blank" class="btn btn-outline-primary btn-lg me-3">
         <i class="fa-brands fa-facebook-f me-2"></i>Facebook
       </a>
       <a href="https://www.instagram.com/barefoothomestays/" target="_blank" class="btn btn-outline-primary btn-lg">
@@ -252,7 +257,7 @@
   <footer class="bg-primary text-white py-4">
     <div class="container text-center">
       <p class="mb-1">&copy; <span id="year"></span> Barefoot Homestays. All rights reserved.</p>
-      <a href="https://www.facebook.com/people/Barefoot-Homestays/100090769633894/#" target="_blank" class="text-white me-3"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.facebook.com/people/Barefoot-Homestays/100090769633894/" target="_blank" class="text-white me-3"><i class="fa-brands fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/barefoothomestays/" target="_blank" class="text-white me-3"><i class="fa-brands fa-instagram"></i></a>
       <a href="mailto:info@barefoothomestays.com" class="text-white"><i class="fa-solid fa-envelope"></i></a>
     </div>
@@ -260,8 +265,7 @@
 
   <!-- ==== BOOTSTRAP + LIGHTBOX (optional) ==== -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Lightbox2 (for gallery) -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
+  <!-- Lightbox JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
