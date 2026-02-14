@@ -3,103 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Homestay</title>
+    <title>Barefoot Homestays</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5dc; /* beige */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5dc;
+            color: #333;
+        }
+        
+        /* Navigation */
         .navbar {
             background-color: #fff;
-            padding: 1rem;
+            padding: 1rem 2rem;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        .navbar a {
-            margin-right: 20px;
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #5c3d2e;
             text-decoration: none;
-            color: #5c3d2e; /* warm brown */
         }
+        
+        .navbar a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #5c3d2e;
+            transition: color 0.3s;
+        }
+        
+        .navbar a:hover {
+            color: #8b6f47;
+        }
+        
+        /* Hero Section */
         .hero {
-            background-image: url('Bedroom.jpg');
-            height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Bedroom.jpg');
             background-size: cover;
+            background-position: center;
+            height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-align: center;
         }
+        
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
+        
+        .hero p {
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+        }
+        
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #5c3d2e;
+            margin-bottom: 2rem;
+        }
+        
+        /* Gallery Grid */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
             padding: 2rem;
         }
+        
         .gallery img {
             width: 100%;
             border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
         }
-        .amenities {
-            display: flex;
-            justify-content: space-around;
-            padding: 2rem;
-            background-color: #e6e2d3; /* soft cream */
+        
+        .gallery img:hover {
+            transform: scale(1.05);
         }
-        .amenities div {
+        
+        /* Amenities Section */
+        #amenities {
+            background-color: #e6e2d3;
+        }
+        
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .amenity-item {
             text-align: center;
+            padding: 1.5rem;
         }
-        .testimonials {
+        
+        .amenity-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .amenity-item p {
+            font-size: 1.1rem;
+            color: #5c3d2e;
+        }
+        
+        /* Testimonials */
+        #testimonials {
             background-color: #f8f8f0;
-            padding: 2rem;
             text-align: center;
         }
-        .booking {
-            text-align: center;
+        
+        .testimonial {
+            background-color: white;
             padding: 2rem;
+            margin: 1rem auto;
+            border-radius: 8px;
+            max-width: 600px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .button {
-            padding: 1em 2em;
+        
+        /* Booking Section */
+        #booking {
+            text-align: center;
+            background-color: #f5f5dc;
+        }
+        
+        .booking-btn {
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
             color: white;
-            background-color: #6b4a3a; /* soft brown */
+            background-color: #6b4a3a;
             border: none;
             border-radius: 5px;
-            font-size: 1.2rem;
             cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 1rem;
+        }
+        
+        .booking-btn:hover {
+            background-color: #8b5a4a;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #5c3d2e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        footer a {
+            color: #d4af8f;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <div class="navbar">
+        <a href="#home" class="navbar-brand">Barefoot Homestays</a>
         <a href="#home">Home</a>
         <a href="#gallery">Gallery</a>
         <a href="#amenities">Amenities</a>
         <a href="#testimonials">Testimonials</a>
         <a href="#booking">Book Now</a>
     </div>
-    <section class="hero">
-        <h1>Welcome to Our Homestay</h1>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div>
+            <h1>Welcome to Barefoot Homestays</h1>
+            <p>Experience comfort and tranquility in our beautiful mountain retreat</p>
+        </div>
     </section>
-    <section class="gallery">
-        <img src="2.jpg" alt="Gallery Image 1">
-        <img src="Entrance.jpg" alt="Gallery Image 2">
-        <img src="Living Room_5.jpg" alt="Gallery Image 3">
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Photo Gallery</h2>
+        <div class="gallery">
+            <img src="Bedroom.jpg" alt="Bedroom">
+            <img src="2.jpg" alt="Living Area">
+            <img src="Entrance.jpg" alt="Entrance">
+            <img src="Living Room_5.jpg" alt="Living Room">
+        </div>
     </section>
-    <section class="amenities">
-        <div><img src="icon1.png" alt="Amenity 1"><p>Free WiFi</p></div>
-        <div><img src="icon2.png" alt="Amenity 2"><p>Breakfast Included</p></div>
-        <div><img src="icon3.png" alt="Amenity 3"><p>Parking Available</p></div>
+
+    <!-- Amenities Section -->
+    <section id="amenities">
+        <h2>Amenities</h2>
+        <div class="amenities-grid">
+            <div class="amenity-item">
+                <div class="amenity-icon">📶</div>
+                <p>Free Wi-Fi</p>
+            </div>
+            <div class="amenity-item">
+                <div class="amenity-icon">☕</div>
+                <p>Breakfast Included</p>
+            </div>
+            <div class="amenity-item">
+                <div class="amenity-icon">🚗</div>
+                <p>Free Parking</p>
+            </div>
+            <div class="amenity-item">
+                <div class="amenity-icon">🏞️</div>
+                <p>Mountain Views</p>
+            </div>
+        </div>
     </section>
-    <section class="testimonials">
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
         <h2>What Our Guests Say</h2>
-        <p>"Best stay ever! Highly recommend!"</p>
+        <div class="testimonial">
+            <p>"Best stay ever! The hospitality was amazing and the views were breathtaking."</p>
+            <p><strong>- Guest Review</strong></p>
+        </div>
+        <div class="testimonial">
+            <p>"A perfect getaway from the hustle and bustle. Highly recommended!"</p>
+            <p><strong>- Satisfied Guest</strong></p>
+        </div>
     </section>
-    <section class="booking">
-        <button class="button">Book Your Stay Now</button>
+
+    <!-- Booking Section -->
+    <section id="booking">
+        <h2>Book Your Stay</h2>
+        <p>Reserve your perfect getaway today</p>
+        <button class="booking-btn">Book Now</button>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Barefoot Homestays. All rights reserved.</p>
+        <p><a href="mailto:info@barefoothomestays.com">info@barefoothomestays.com</a> | <a href="tel:+91234567890">+91 234 567 890</a></p>
+    </footer>
 </body>
 </html>
