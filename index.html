@@ -341,8 +341,37 @@
     <div class="container">
       <h2 class="text-center mb-4">Get In Touch / Book</h2>
 
-      <!-- Simple Form via Formspree (no backend needed) -->
-      <form action="https://formspree.io/f/your-form-id" method="POST" class="row g-3 needs-validation" novalidate>
+      <!-- 
+        CONTACT FORM SETUP REQUIRED:
+        
+        Option 1: Web3Forms (Recommended - Easiest to set up)
+        1. Sign up at https://web3forms.com (free plan: 250 submissions/month)
+        2. Get your access key from the dashboard
+        3. Replace YOUR_WEB3FORMS_ACCESS_KEY below with your actual key
+        
+        Option 2: Formspree (Alternative)
+        1. Sign up at https://formspree.io (free plan: 50 submissions/month)
+        2. Create a new form and get your form ID
+        3. Replace the action URL with: https://formspree.io/f/YOUR-FORM-ID
+        4. Change name="_replyto" to name="email" for the email field
+      -->
+      
+      <!-- Web3Forms Integration (Default) -->
+      <form action="https://api.web3forms.com/submit" method="POST" class="row g-3 needs-validation" novalidate>
+        <!-- Required: Replace YOUR_WEB3FORMS_ACCESS_KEY with your actual access key -->
+        <!-- WARNING: Once you add your real access key, be careful not to commit it to public repositories -->
+        <!-- For sensitive projects, consider using environment variables or a separate config file -->
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        
+        <!-- Optional: Customize the email subject -->
+        <input type="hidden" name="subject" value="New Booking Inquiry from Barefoot Homestays Website">
+        
+        <!-- Optional: Redirect to a thank you page after submission -->
+        <!-- <input type="hidden" name="redirect" value="https://www.barefoothomestays.com/thank-you.html"> -->
+        
+        <!-- Spam protection (hidden field) -->
+        <input type="checkbox" name="botcheck" style="display: none;">
+        
         <div class="col-md-6">
           <label for="name" class="form-label">Your Name</label>
           <input type="text" class="form-control" id="name" name="name" required>
@@ -350,7 +379,7 @@
         </div>
         <div class="col-md-6">
           <label for="email" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="email" name="_replyto" required>
+          <input type="email" class="form-control" id="email" name="email" required>
           <div class="invalid-feedback">Please provide a valid email.</div>
         </div>
         <div class="col-12">
