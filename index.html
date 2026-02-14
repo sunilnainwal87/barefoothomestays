@@ -1,11 +1,245 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My First Website</title>
+  <meta charset="UTF-8">
+  <title>Cozy Homestay – Your Home Away From Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Optional: Font Awesome icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-    <h1>Hello! </h1>
-    <p>Welcome to Barefoot Homestays!</p>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="70" tabindex="0">
+
+  <!-- ==== NAVIGATION ==== -->
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Cozy Homestay</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#rooms">Rooms</a></li>
+          <li class="nav-item"><a class="nav-link" href="#amenities">Amenities</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#location">Location</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==== HERO ==== -->
+  <section id="hero" class="vh-100 d-flex align-items-center justify-content-center text-center text-white"
+    style="background: url('assets/img/hero.jpg') center/cover no-repeat;">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Welcome to Cozy Homestay</h1>
+      <p class="lead mb-4">Relax, unwind, and feel right at home in our peaceful mountain retreat.</p>
+      <a href="#rooms" class="btn btn-outline-light btn-lg me-2">Explore Rooms</a>
+      <a href="#contact" class="btn btn-primary btn-lg">Book Now</a>
+    </div>
+  </section>
+
+  <!-- ==== ABOUT ==== -->
+  <section id="about" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">About Us</h2>
+      <p class="lead text-center">Our family‑run homestay offers a warm welcome, fresh breakfast, and easy access to hiking trails.</p>
+      <div class="row align-items-center mt-4">
+        <div class="col-md-5">
+          <img src="assets/img/about.jpg" alt="Host family" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-7">
+          <p>Located just 10 minutes from the town centre, Cozy Homestay provides a tranquil escape. Each room is designed with comfort in mind, featuring <strong>organic linens, fast Wi‑Fi, and panoramic views</strong>. Whether you’re traveling solo, as a couple, or with family, we have the perfect space for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==== ROOMS ==== -->
+  <section id="rooms" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Our Rooms & Rates</h2>
+      <div class="row g-4">
+
+        <!-- ROOM 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="assets/img/room-1.jpg" class="card-img-top" alt="Cozy double room">
+            <div class="card-body">
+              <h5 class="card-title">Cozy Double</h5>
+              <p class="card-text">A comfortable double bed, private balcony, and garden view.</p>
+              <ul class="list-unstyled mb-2">
+                <li><i class="fa-solid fa-wifi me-2"></i>Free Wi‑Fi</li>
+                <li><i class="fa-solid fa-coffee me-2"></i>Breakfast included</li>
+              </ul>
+              <p class="h5 text-primary">$80 / night</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 text-center">
+              <a href="#contact" class="btn btn-primary">Book This Room</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROOM 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="assets/img/room-2.jpg" class="card-img-top" alt="Family suite">
+            <div class="card-body">
+              <h5 class="card-title">Family Suite</h5>
+              <p class="card-text">Two bedrooms, a full kitchen, and a spacious living area.</p>
+              <ul class="list-unstyled mb-2">
+                <li><i class="fa-solid fa-tv me-2"></i>Flat‑screen TV</li>
+                <li><i class="fa-solid fa-parking me-2"></i>Free parking</li>
+              </ul>
+              <p class="h5 text-primary">$150 / night</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 text-center">
+              <a href="#contact" class="btn btn-primary">Book This Room</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROOM 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="assets/img/room-3.jpg" class="card-img-top" alt="Mountain view suite">
+            <div class="card-body">
+              <h5 class="card-title">Mountain View Suite</h5>
+              <p class="card-text">Panoramic views, private terrace, and a jacuzzi.</p>
+              <ul class="list-unstyled mb-2">
+                <li><i class="fa-solid fa-spa me-2"></i>Jacuzzi</li>
+                <li><i class="fa-solid fa-wind me-2"></i>Fireplace</li>
+              </ul>
+              <p class="h5 text-primary">$200 / night</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 text-center">
+              <a href="#contact" class="btn btn-primary">Book This Room</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==== AMENITIES ==== -->
+  <section id="amenities" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Amenities</h2>
+      <div class="row g-4">
+        <div class="col-6 col-md-3 text-center">
+          <i class="fa-solid fa-wifi fa-2x mb-2"></i>
+          <p>Free Wi‑Fi</p>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <i class="fa-solid fa-utensils fa-2x mb-2"></i>
+          <p>Breakfast included</p>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <i class="fa-solid fa-parking fa-2x mb-2"></i>
+          <p>Free Parking</p>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <i class="fa-solid fa-dumbbell fa-2x mb-2"></i>
+          <p>Gym access nearby</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==== GALLERY ==== -->
+  <section id="gallery" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Photo Gallery</h2>
+      <div class="row g-3">
+        <!-- Repeat for each photo -->
+        <div class="col-6 col-sm-4 col-lg-3">
+          <a href="assets/img/gallery-1.jpg" data-bs-toggle="lightbox">
+            <img src="assets/img/gallery-1.jpg" class="img-fluid rounded" alt="Gallery image 1">
+          </a>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-3">
+          <a href="assets/img/gallery-2.jpg" data-bs-toggle="lightbox">
+            <img src="assets/img/gallery-2.jpg" class="img-fluid rounded" alt="Gallery image 2">
+          </a>
+        </div>
+        <!-- … add more as needed … -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==== LOCATION ==== -->
+  <section id="location" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Where We Are</h2>
+      <p class="text-center mb-4">123 Mountain Road, Alpine Village, Country – 5 km from the town centre.</p>
+
+      <!-- Google Maps Embed -->
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.098... (your‑place‑embed‑URL)" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==== CONTACT / BOOKING ==== -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Get In Touch / Book</h2>
+
+      <!-- 1️⃣ Simple Form via Formspree (no backend needed) -->
+      <form action="https://formspree.io/f/your-form-id" method="POST" class="row g-3 needs-validation" novalidate>
+        <div class="col-md-6">
+          <label for="name" class="form-label">Your Name</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+          <div class="invalid-feedback">Please enter your name.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" name="_replyto" required>
+          <div class="invalid-feedback">Please provide a valid email.</div>
+        </div>
+        <div class="col-12">
+          <label for="message" class="form-label">Message / Dates</label>
+          <textarea class="form-control" id="message" name="message" rows="4" placeholder="e.g. Check‑in 12‑Oct, 2 nights" required></textarea>
+          <div class="invalid-feedback">Please write a message.</div>
+        </div>
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-primary btn-lg">Send Request</button>
+        </div>
+      </form>
+
+      <!-- 2️⃣ Optional – embed a Calendly widget for instant bookings -->
+      <!--
+      <div class="text-center mt-5">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/yourusername/homestay" style="min-width:320px;height:630px;"></div>
+        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </div>
+      -->
+    </div>
+  </section>
+
+  <!-- ==== FOOTER ==== -->
+  <footer class="bg-primary text-white py-4">
+    <div class="container text-center">
+      <p class="mb-1">&copy; <span id="year"></span> Cozy Homestay. All rights reserved.</p>
+      <a href="https://www.facebook.com/yourpage" target="_blank" class="text-white me-3"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/yourpage" target="_blank" class="text-white me-3"><i class="fa-brands fa-instagram"></i></a>
+      <a href="mailto:info@cozyhomestay.com" class="text-white"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </footer>
+
+  <!-- ==== BOOTSTRAP + LIGHTBOX (optional) ==== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Lightbox2 (for gallery) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
