@@ -111,6 +111,22 @@ If you prefer to use Formspree instead:
 
 ---
 
+## Security Note
+
+⚠️ **Important:** Your access key or form ID will be visible in your HTML source code. This is normal for static websites, but keep these points in mind:
+
+- **Web3Forms and Formspree access keys are safe to expose** in client-side code (they're designed for this use case)
+- Both services have **spam protection** and **rate limiting** built-in
+- You can **restrict domains** in your service dashboard to prevent abuse
+- Never share your **account password** - only the access key is meant to be public
+
+For higher security needs, consider:
+- Enabling domain restrictions in your dashboard
+- Using reCAPTCHA (available in both services)
+- Setting up custom webhooks for additional validation
+
+---
+
 ## Troubleshooting
 
 ### "Form not found" error persists
