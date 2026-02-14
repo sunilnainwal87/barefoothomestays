@@ -3,139 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Barefoot Homestays</title>
+    <title>Professional Homestay</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5dc; /* beige */
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #5c3d2e; /* warm brown */
+        }
+        .hero {
+            background-image: url('Bedroom.jpg');
+            height: 80vh;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .hero h1 {
+            font-size: 3rem;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+            padding: 2rem;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .amenities {
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem;
+            background-color: #e6e2d3; /* soft cream */
+        }
+        .amenities div {
+            text-align: center;
+        }
+        .testimonials {
+            background-color: #f8f8f0;
+            padding: 2rem;
+            text-align: center;
+        }
+        .booking {
+            text-align: center;
+            padding: 2rem;
+        }
+        .button {
+            padding: 1em 2em;
+            color: white;
+            background-color: #6b4a3a; /* soft brown */
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Barefoot Homestays</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#rooms">Rooms</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#amenities">Amenities</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#gallery">Gallery</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#location">Location</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero-section text-center">
-        <div class="container">
-            <h1>Welcome to Barefoot Homestays</h1>
-            <p>Experience comfort and tranquility in our beautiful homestay.</p>
-        </div>
-    </header>
-
-    <!-- Rooms Section -->
-    <section id="rooms" class="my-5">
-        <div class="container">
-            <h2>Our Rooms</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="Bedroom.jpg" class="img-fluid" alt="Bedroom">
-                    <h3>Bedroom</h3>
-                </div>
-                <div class="col-md-4">
-                    <img src="2.jpg" class="img-fluid" alt="Room 2">
-                    <h3>Room 2</h3>
-                </div>
-                <div class="col-md-4">
-                    <img src="Living Room_5.jpg" class="img-fluid" alt="Living Room">
-                    <h3>Living Room</h3>
-                </div>
-            </div>
-        </div>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#booking">Book Now</a>
+    </div>
+    <section class="hero">
+        <h1>Welcome to Our Homestay</h1>
     </section>
-
-    <!-- Amenities Section -->
-    <section id="amenities" class="my-5">
-        <div class="container">
-            <h2>Amenities</h2>
-            <p>Enjoy these great amenities during your stay with us:</p>
-            <ul>
-                <li>Free Wi-Fi</li>
-                <li>Breakfast included</li>
-                <li>Swimming pool</li>
-                <li>Parking space</li>
-            </ul>
-        </div>
+    <section class="gallery">
+        <img src="2.jpg" alt="Gallery Image 1">
+        <img src="Entrance.jpg" alt="Gallery Image 2">
+        <img src="Living Room_5.jpg" alt="Gallery Image 3">
     </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="my-5">
-        <div class="container">
-            <h2>Gallery</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="Entrance.jpg" class="img-fluid" alt="Entrance">
-                </div>
-                <div class="col-md-4">
-                    <img src="2.jpg" class="img-fluid" alt="Gallery Image 2">
-                </div>
-                <div class="col-md-4">
-                    <img src="Bedroom.jpg" class="img-fluid" alt="Gallery Image 3">
-                </div>
-            </div>
-        </div>
+    <section class="amenities">
+        <div><img src="icon1.png" alt="Amenity 1"><p>Free WiFi</p></div>
+        <div><img src="icon2.png" alt="Amenity 2"><p>Breakfast Included</p></div>
+        <div><img src="icon3.png" alt="Amenity 3"><p>Parking Available</p></div>
     </section>
-
-    <!-- Location Section -->
-    <section id="location" class="my-5">
-        <div class="container">
-            <h2>Our Location</h2>
-            <p>Find us at:</p>
-            <p>123 Homestay Lane, Country, City</p>
-        </div>
+    <section class="testimonials">
+        <h2>What Our Guests Say</h2>
+        <p>"Best stay ever! Highly recommend!"</p>
     </section>
-
-    <!-- Contact Form Section -->
-    <section id="contact" class="my-5">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <form>
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea class="form-control" id="message" rows="4" placeholder="Your message"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
+    <section class="booking">
+        <button class="button">Book Your Stay Now</button>
     </section>
-
-    <!-- Footer -->
-    <footer class="bg-light text-center p-3">
-        <p>&copy; 2026 Barefoot Homestays. All rights reserved.</p>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
