@@ -248,6 +248,39 @@ h2::after {
 }
 
 /* -------------------------------------------------
+   Awards & Guest Ratings Section
+   ------------------------------------------------- */
+#awards .award-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+#awards .card {
+  transition: all 0.3s ease;
+}
+
+#awards .card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+#awards .card-title {
+  color: var(--primary);
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+#awards img {
+  transition: transform 0.3s ease;
+}
+
+#awards .card:hover img {
+  transform: scale(1.05);
+}
+
+/* -------------------------------------------------
    Gallery Enhancements
    ------------------------------------------------- */
 .gallery-item {
