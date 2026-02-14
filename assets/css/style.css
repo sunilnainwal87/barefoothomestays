@@ -1,3 +1,22 @@
+/* -------------------------------------------------
+   Brand colour – used by the navbar and the hero banner
+   ------------------------------------------------- */
+:root {
+  --primary: #0066ff;   /* <-- replace with the exact hex you use for the top bar */
+}
+
+/* OPTIONAL: a very light dark overlay for better text contrast
+   (remove this block if you don’t want any overlay) */
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.12);   /* 12 % black – tweak if needed */
+  z-index: 0;
+}
+#hero > .container { position: relative; z-index: 1; }
+
+
 /* style.css – minimal custom overrides */
 html {
   scroll-behavior: smooth;   /* smooth scrolling for anchor links */
@@ -8,15 +27,6 @@ html {
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
-/* ---- Branding colour – used by navbar and hero ---- */
-:root {
-  --primary: #0066ff;    /* <- replace with your exact brand hex if different */
-}
-
-/* ---- Branding colour – used by navbar and hero ---- */
-:root {
-  --primary: #0066ff;    /* <- replace with your exact brand hex if different */
-}
 
 /* Bootstrap already defines .bg-primary using the variable,
    but we also expose it for custom selectors if needed */
