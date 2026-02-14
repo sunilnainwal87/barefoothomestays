@@ -434,9 +434,9 @@
         </div>
         <div class="col-md-6">
           <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
-          <input type="tel" class="form-control" id="phone" name="phone" placeholder="+91 1234567890" required>
+          <input type="tel" class="form-control" id="phone" name="phone" placeholder="+91 1234567890" pattern="[\+]?[0-9\s\-\(\)]+" title="Please enter a valid phone number (e.g., +91 1234567890 or 1234567890)" required>
           <div class="form-text"><i class="fa-solid fa-phone me-1"></i>Please provide your phone number - it helps us contact you quickly for booking confirmation!</div>
-          <div class="invalid-feedback">Please enter your phone number.</div>
+          <div class="invalid-feedback">Please enter a valid phone number.</div>
         </div>
         <div class="col-md-6">
           <label for="checkin" class="form-label">Check-in Date</label>
