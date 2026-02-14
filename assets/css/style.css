@@ -8,6 +8,44 @@ html {
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
+/* ---- Branding colour – used by navbar and hero ---- */
+:root {
+  --primary: #0066ff;    /* <- replace with your exact brand hex if different */
+}
+
+/* ---- Branding colour – used by navbar and hero ---- */
+:root {
+  --primary: #0066ff;    /* <- replace with your exact brand hex if different */
+}
+
+/* Bootstrap already defines .bg-primary using the variable,
+   but we also expose it for custom selectors if needed */
+.bg-primary { background-color: var(--primary) !important; }
+
+/* OPTIONAL overlay for readability (remove if you don’t want it) */
+#hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.12);   /* tweak opacity as you like */
+}
+#hero > .container { position:relative; z-index:1; }
+
+
+/* Bootstrap already defines .bg-primary using the variable,
+   but we also expose it for custom selectors if needed */
+.bg-primary { background-color: var(--primary) !important; }
+
+/* OPTIONAL overlay for readability (remove if you don’t want it) */
+#hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.12);   /* tweak opacity as you like */
+}
+#hero > .container { position:relative; z-index:1; }
+
+
 /* Adjust the lightbox overlay color */
 .ekko-lightbox .modal-content {
   background-color: rgba(0,0,0,0.85);
