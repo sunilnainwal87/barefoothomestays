@@ -1,78 +1,334 @@
 /* -------------------------------------------------
-   Brand colour – used by the navbar and the hero banner
+   Professional Color Palette & Variables
    ------------------------------------------------- */
 :root {
-  --primary: #0066ff;   /* <-- replace with the exact hex you use for the top bar */
+  --primary: #2c5f4f;        /* Deep forest green - professional & calming */
+  --secondary: #8b7355;      /* Warm taupe/brown */
+  --accent: #d4a574;         /* Gold/beige accent */
+  --dark: #1a1a1a;           /* Almost black for text */
+  --light-bg: #f8f9fa;       /* Light background */
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* OPTIONAL: a very light dark overlay for better text contrast
-   (remove this block if you don’t want any overlay) */
+/* -------------------------------------------------
+   Global Styles
+   ------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark);
+  line-height: 1.7;
+}
+
+/* -------------------------------------------------
+   Navigation Bar - Professional Look
+   ------------------------------------------------- */
+.navbar {
+  background: linear-gradient(135deg, var(--primary) 0%, #234a3d 100%) !important;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 70%;
+}
+
+/* -------------------------------------------------
+   Hero Section - Enhanced Design
+   ------------------------------------------------- */
+#hero {
+  position: relative;
+  background-attachment: fixed;
+}
+
 #hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.12);   /* 12 % black – tweak if needed */
+  background: linear-gradient(135deg, rgba(44, 95, 79, 0.75) 0%, rgba(35, 74, 61, 0.85) 100%);
   z-index: 0;
 }
-#hero > .container { position: relative; z-index: 1; }
 
-
-/* style.css – minimal custom overrides */
-html {
-  scroll-behavior: smooth;   /* smooth scrolling for anchor links */
+#hero > .container {
+  position: relative;
+  z-index: 1;
 }
 
-/* Hero text shadow for readability */
-#hero h1, #hero p {
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+#hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
 }
 
-
-/* Bootstrap already defines .bg-primary using the variable,
-   but we also expose it for custom selectors if needed */
-.bg-primary { background-color: var(--primary) !important; }
-
-/* OPTIONAL overlay for readability (remove if you don’t want it) */
-#hero::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.12);   /* tweak opacity as you like */
-}
-#hero > .container { position:relative; z-index:1; }
-
-
-/* Bootstrap already defines .bg-primary using the variable,
-   but we also expose it for custom selectors if needed */
-.bg-primary { background-color: var(--primary) !important; }
-
-/* OPTIONAL overlay for readability (remove if you don’t want it) */
-#hero::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.12);   /* tweak opacity as you like */
-}
-#hero > .container { position:relative; z-index:1; }
-
-
-/* Adjust the lightbox overlay color */
-.ekko-lightbox .modal-content {
-  background-color: rgba(0,0,0,0.85);
+#hero p {
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 300;
 }
 
-/* Footer social icons hover */
+.btn {
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: var(--accent);
+  border: none;
+  color: var(--dark);
+}
+
+.btn-primary:hover {
+  background: #c69963;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(212, 165, 116, 0.4);
+}
+
+.btn-outline-light {
+  border: 2px solid #fff;
+}
+
+.btn-outline-light:hover {
+  background: #fff;
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------------------
+   Section Styling
+   ------------------------------------------------- */
+section {
+  padding: 5rem 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+}
+
+.text-center h2::after {
+  left: 50%;
+}
+
+.lead {
+  font-size: 1.2rem;
+  color: #555;
+  font-weight: 400;
+}
+
+/* -------------------------------------------------
+   Professional Card Design for Rooms
+   ------------------------------------------------- */
+.card {
+  border: 1px solid #e8e8e8;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: all 0.4s ease;
+  height: 100%;
+  background: #fff;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.card-footer {
+  padding: 1.5rem;
+  background: transparent;
+}
+
+/* Room price / contact info styling */
+.contact-info {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contact-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* -------------------------------------------------
+   Amenities Section
+   ------------------------------------------------- */
+#amenities .fa-2x {
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+#amenities .text-center:hover .fa-2x {
+  color: var(--accent);
+  transform: scale(1.2);
+}
+
+/* -------------------------------------------------
+   Gallery Enhancements
+   ------------------------------------------------- */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.gallery-item img {
+  transition: transform 0.4s ease;
+  border-radius: 10px;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* -------------------------------------------------
+   Footer
+   ------------------------------------------------- */
+footer {
+  background: linear-gradient(135deg, var(--primary) 0%, #234a3d 100%) !important;
+}
+
+footer a {
+  transition: all 0.3s ease;
+}
+
 footer a:hover {
-  opacity: 0.8;
+  color: var(--accent) !important;
+  transform: scale(1.1);
 }
 
-/* Optional: animate cards on scroll (simple CSS) */
-[data-bs-spy="scroll"] .card {
-  transform: translateY(20px);
-  opacity: 0;
-  transition: all .4s ease-out;
+/* -------------------------------------------------
+   Social Media Section
+   ------------------------------------------------- */
+.social-media {
+  background: var(--light-bg);
+  padding: 3rem 0;
 }
-[data-bs-spy="scroll"] .card.show {
-  transform: translateY(0);
-  opacity: 1;
+
+.social-media h2 {
+  color: var(--primary);
+}
+
+.social-media .btn {
+  margin: 0.5rem;
+  min-width: 200px;
+}
+
+/* -------------------------------------------------
+   Contact Form
+   ------------------------------------------------- */
+.form-control {
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(44, 95, 79, 0.15);
+}
+
+/* -------------------------------------------------
+   Responsive Design
+   ------------------------------------------------- */
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  #hero p {
+    font-size: 1.1rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  section {
+    padding: 3rem 0;
+  }
 }
