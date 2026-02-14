@@ -196,11 +196,45 @@
     </div>
   </section>
 
-  <!-- ==== LOCATION ==== -->
-  <section id="location" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-4">Where We Are</h2>
-      <p class="text-center mb-4">123 Mountain Road, Alpine Village, Country – 5 km from the town centre.</p>
+<!-- ==== LOCATION ==== -->
+<section id="location" class="py-5 bg-light">
+  <div class="container">
+
+    <!-- Section title -->
+    <h2 class="text-center mb-4">Where We Are</h2>
+
+    <!-- Optional short address line – edit as you wish -->
+    <p class="text-center mb-4">
+      Barefoot Homestay – 29.4766112 N, 79.1488064 E
+    </p>
+
+    <!-- ==== RESPONSIVE MAP WRAPPER ==== -->
+    <!-- Bootstrap's ratio class forces a 16:9 responsive iframe -->
+    <div class="ratio ratio-16x9">
+      <!-- ==== PASTE YOUR EMBED URL HERE ==== -->
+      <iframe
+        src="https://www.google.com/maps/place/Barefoot+Homestay/@29.4766112,79.1488064,17z/data=!3m1!4b1!4m9!3m8!1s0x390a110042828fdf:0xab430f10d061499d!5m2!4m1!1i2!8m2!3d29.4766112!4d79.1488064!16s%2Fg%2F11ybf8_p4l?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D"
+        style="border:0;"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <!-- End of map wrapper -->
+
+    <!-- OPTIONAL: A tiny “Open in Google Maps” button -->
+    <div class="text-center mt-3">
+      <a href="https://www.google.com/maps/place/Barefoot+Homestay/@29.4766112,79.1488064,17z"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="btn btn-outline-primary btn-sm">
+        <i class="fa-solid fa-location-dot me-1"></i> View larger map
+      </a>
+    </div>
+
+  </div>
+</section>
+
 
       <!-- Google Maps Embed -->
       <div class="ratio ratio-16x9">
