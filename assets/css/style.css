@@ -1,0 +1,30 @@
+/* style.css – minimal custom overrides */
+html {
+  scroll-behavior: smooth;   /* smooth scrolling for anchor links */
+}
+
+/* Hero text shadow for readability */
+#hero h1, #hero p {
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+/* Adjust the lightbox overlay color */
+.ekko-lightbox .modal-content {
+  background-color: rgba(0,0,0,0.85);
+}
+
+/* Footer social icons hover */
+footer a:hover {
+  opacity: 0.8;
+}
+
+/* Optional: animate cards on scroll (simple CSS) */
+[data-bs-spy="scroll"] .card {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all .4s ease-out;
+}
+[data-bs-spy="scroll"] .card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
