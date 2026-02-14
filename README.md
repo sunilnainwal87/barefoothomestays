@@ -18,7 +18,7 @@ The website has been fully restored and is ready to go live. The index.html file
 - **Amenities Section**: List of available facilities
 - **Photo Gallery**: Interactive lightbox gallery with 6+ images
 - **Location Section**: Google Maps integration (requires configuration)
-- **Contact Form**: Formspree integration (requires configuration)
+- **Contact Form**: Web3Forms integration (requires configuration) - Free alternative to Formspree
 - **Social Media**: Links to Facebook and Instagram
 - **Footer**: Copyright and social media icons
 
@@ -43,10 +43,35 @@ Before going fully live, update these placeholders:
 - Get your embed code from [Google Maps](https://www.google.com/maps)
 - Replace the incomplete URL with your actual location embed code
 
-### 2. Formspree Contact Form (index.html, line ~219)
-- Sign up at [Formspree.io](https://formspree.io)
-- Replace `your-form-id` with your actual Formspree form ID
-- This enables the contact form to receive submissions
+### 2. Contact Form Setup (index.html, line ~344)
+
+**⚠️ IMPORTANT:** The contact form requires setup to work properly. Choose one of these options:
+
+#### Option A: Web3Forms (Recommended - Easiest)
+1. Sign up for free at [Web3Forms](https://web3forms.com)
+   - Free plan: 250 submissions/month
+   - No credit card required
+2. Verify your email address
+3. Copy your access key from the dashboard
+4. In `index.html` (around line 362), replace `YOUR_WEB3FORMS_ACCESS_KEY` with your actual access key
+5. Form submissions will be sent to your registered email
+
+**Quick Setup (30 seconds):**
+```html
+<input type="hidden" name="access_key" value="your-actual-access-key-here">
+```
+
+#### Option B: Formspree (Alternative)
+1. Sign up at [Formspree.io](https://formspree.io)
+   - Free plan: 50 submissions/month
+2. Create a new form in the dashboard
+3. Get your form ID (looks like: `abc123xyz`)
+4. In `index.html`:
+   - Change form action to: `https://formspree.io/f/YOUR-FORM-ID`
+   - Change the email input name from `name="email"` to `name="_replyto"`
+5. Remove or comment out Web3Forms hidden inputs
+
+**Without this setup, you'll see an error:** "Form not found. Please check the form hashid"
 
 ## 📁 File Structure
 
