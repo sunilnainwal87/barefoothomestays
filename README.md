@@ -95,7 +95,7 @@ barefoothomestays/
 ## 📧 Contact
 
 For inquiries or bookings:
-- **Email**: info@barefoothomestays.com
+- **Email**: barefoothomestays1@gmail.com
 - **Facebook**: [Barefoot Homestays](https://www.facebook.com/people/Barefoot-Homestays/100090769633894/)
 - **Instagram**: [@barefoothomestays](https://www.instagram.com/barefoothomestays/)
 
