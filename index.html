@@ -181,26 +181,62 @@
     </div>
   </section>
 
-  <!-- ==== GALLERY ==== -->
-  <section id="gallery" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-5">Photo Gallery</h2>
-      <div class="row g-3">
-        <!-- Repeat for each photo -->
-        <div class="col-6 col-sm-4 col-lg-3">
-          <a href="assets/img/gallery-1.jpg" data-bs-toggle="lightbox">
-            <img src="assets/img/gallery-1.jpg" class="img-fluid rounded" alt="Gallery image 1">
-          </a>
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3">
-          <a href="assets/img/gallery-2.jpg" data-bs-toggle="lightbox">
-            <img src="assets/img/gallery-2.jpg" class="img-fluid rounded" alt="Gallery image 2">
-          </a>
-        </div>
-        <!-- … add more as needed … -->
+  <!-- ==== GALLERY – Photo showcase of Barefoot Homestays ==== -->
+<section id="gallery" class="py-5 bg-light">
+  <div class="container">
+
+    <h2 class="text-center mb-5">Barefoot Homestays – Photo Gallery</h2>
+
+    <!-- ---- Responsive grid of thumbnails ---- -->
+    <div class="row g-3">
+
+      <!-- ==== REPEAT ONE OF THESE .col blocks FOR EACH PHOTO ==== -->
+      <div class="col-6 col-sm-4 col-lg-3">
+        <!-- Lightbox link – points to the full‑size image -->
+        <a href="assets/img/R_R09485.jpg"
+           class="glightbox"
+           data-gallery="barefoot-gallery"
+           data-title="Living Room with Kitchen">
+          <!-- Thumbnail (uses the same file – the browser will downscale it) -->
+          <img src="assets/img/room-1.jpg"
+               class="img-fluid rounded shadow-sm"
+               loading="lazy"
+               alt="Living Room with Kitchen">
+        </a>
       </div>
+
+      <div class="col-6 col-sm-4 col-lg-3">
+        <a href="assets/img/room-2.jpg"
+           class="glightbox"
+           data-gallery="barefoot-gallery"
+           data-title="Living Room with Kitchen">
+          <img src="assets/img/2.jpg"
+               class="img-fluid rounded shadow-sm"
+               loading="lazy"
+               alt="Living Room with Kitchen">
+        </a>
+      </div>
+    
+      <!-- ---- ADD MORE .col blocks for every extra picture ---- -->
+      <!-- Example template for quick copy/paste:
+      <div class="col-6 col-sm-4 col-lg-3">
+        <a href="assets/img/FILE_NAME.jpg"
+           class="glightbox"
+           data-gallery="barefoot-gallery"
+           data-title="YOUR CAPTION HERE">
+          <img src="assets/img/FILE_NAME.jpg"
+               class="img-fluid rounded shadow-sm"
+               loading="lazy"
+               alt="YOUR CAPTION HERE">
+        </a>
+      </div>
+      -->
     </div>
-  </section>
+    <!-- End .row -->
+
+  </div>
+</section>
+
 
 <!-- ==== LOCATION ==== -->
 <section id="location" class="py-5 bg-light">
