@@ -330,6 +330,20 @@ h2::after {
   transition: all 0.3s ease;
 }
 
+@media (max-width: 576px) {
+  .gallery-item-scroll {
+    width: 250px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 375px) {
+  .gallery-item-scroll {
+    width: 220px;
+    height: 180px;
+  }
+}
+
 .gallery-item-scroll:hover {
   transform: translateY(-5px);
   box-shadow: var(--card-shadow-hover);
