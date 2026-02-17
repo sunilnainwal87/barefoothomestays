@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Barefoot Homestays – Your Home Away From Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Preload critical hero image for faster initial render -->
+  <link rel="preload" as="image" href="assets/img/Entrance.jpg">
   <!-- Bootstrap CSS (CDN) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Optional: Font Awesome icons -->
@@ -64,7 +66,7 @@
       <p class="lead text-center">Experience luxury homestay living just 950 meters from Jim Corbett National Park's Garjiya Gate.</p>
       <div class="row align-items-center mt-4">
         <div class="col-md-5">
-          <img src="Living Room_5.jpg" alt="Living Room" class="img-fluid rounded shadow">
+          <img src="Living Room_5.jpg" alt="Living Room" class="img-fluid rounded shadow" loading="lazy">
         </div>
         <div class="col-md-7">
           <p>Located in Ramnagar, Barefoot Homestays offers spacious, fully-equipped apartments perfect for couples and families seeking a blend of comfort and nature. Each apartment features modern amenities including <strong>smart TV, high-speed Wi-Fi, luxury bathrooms with bathtubs</strong>, and a fully equipped kitchen. Wake up to mountain views, enjoy home-cooked meals, and experience wildlife right at your doorstep with frequent sightings of deer and peacocks.</p>
@@ -83,7 +85,7 @@
         <!-- APARTMENT 1 - OLIVE -->
         <div class="col-md-6">
           <div class="card h-100 shadow-sm">
-            <img src="assets/img/Olive.jpg" class="card-img-top" alt="Olive Apartment">
+            <img src="assets/img/Olive.jpg" class="card-img-top" alt="Olive Apartment" loading="lazy">
             <div class="card-body">
               <h5 class="card-title">Olive - One Bedroom Apartment</h5>
               <p class="card-text">Spacious apartment with one king-size bedroom, ensuite bathroom with luxury bathtub, living room, dining area, and fully equipped kitchen.</p>
@@ -108,7 +110,7 @@
         <!-- APARTMENT 2 - BEIGE -->
         <div class="col-md-6">
           <div class="card h-100 shadow-sm">
-            <img src="assets/img/Beige.jpg" class="card-img-top" alt="Beige Apartment">
+            <img src="assets/img/Beige.jpg" class="card-img-top" alt="Beige Apartment" loading="lazy">
             <div class="card-body">
               <h5 class="card-title">Beige - One Bedroom Apartment</h5>
               <p class="card-text">Spacious apartment with one king-size bedroom, ensuite bathroom with luxury bathtub, living room, dining area, and fully equipped kitchen.</p>
@@ -133,7 +135,7 @@
         <!-- APARTMENT 3 - TURQUOISE -->
         <div class="col-md-6">
           <div class="card h-100 shadow-sm">
-            <img src="assets/img/Turquoise.jpg" class="card-img-top" alt="Turquoise Apartment">
+            <img src="assets/img/Turquoise.jpg" class="card-img-top" alt="Turquoise Apartment" loading="lazy">
             <div class="card-body">
               <h5 class="card-title">Turquoise - One Bedroom Apartment</h5>
               <p class="card-text">Spacious apartment with one king-size bedroom, ensuite bathroom with luxury bathtub, living room, dining area, and fully equipped kitchen.</p>
@@ -158,7 +160,7 @@
         <!-- APARTMENT 4 - DOVE -->
         <div class="col-md-6">
           <div class="card h-100 shadow-sm">
-            <img src="assets/img/Dove.jpg" class="card-img-top" alt="Dove Apartment">
+            <img src="assets/img/Dove.jpg" class="card-img-top" alt="Dove Apartment" loading="lazy">
             <div class="card-body">
               <h5 class="card-title">Dove - One Bedroom Apartment</h5>
               <p class="card-text">Spacious apartment with one king-size bedroom, ensuite bathroom with luxury bathtub, living room, dining area, and fully equipped kitchen.</p>
@@ -254,7 +256,7 @@
           <div class="card h-100 shadow-sm text-center">
             <div class="card-body p-4">
               <div class="award-image-container mb-3">
-                <img src="assets/img/MMT.jpg" class="img-fluid rounded" alt="MakeMyTrip Guest Excellence Award" style="max-height: 300px; object-fit: contain;">
+                <img src="assets/img/MMT.jpg" class="img-fluid rounded" alt="MakeMyTrip Guest Excellence Award" style="max-height: 300px; object-fit: contain;" loading="lazy">
               </div>
               <h5 class="card-title">MakeMyTrip Recognition</h5>
               <p class="card-text text-muted">Guest Excellence Award for outstanding service and hospitality.</p>
@@ -267,7 +269,7 @@
           <div class="card h-100 shadow-sm text-center">
             <div class="card-body p-4">
               <div class="award-image-container mb-3">
-                <img src="assets/img/MMT_2.jpg" class="img-fluid rounded" alt="Booking.com High Guest Rating" style="max-height: 300px; object-fit: contain;">
+                <img src="assets/img/MMT_2.jpg" class="img-fluid rounded" alt="Booking.com High Guest Rating" style="max-height: 300px; object-fit: contain;" loading="lazy">
               </div>
               <h5 class="card-title">High Guest Ratings</h5>
               <p class="card-text text-muted">Consistently high ratings from satisfied guests on Booking.com.</p>
@@ -280,7 +282,7 @@
           <div class="card h-100 shadow-sm text-center">
             <div class="card-body p-4">
               <div class="award-image-container mb-3">
-                <img src="assets/img/Airbnb.jpg" class="img-fluid rounded" alt="Airbnb Recognition" style="max-height: 300px; object-fit: contain;">
+                <img src="assets/img/Airbnb.jpg" class="img-fluid rounded" alt="Airbnb Recognition" style="max-height: 300px; object-fit: contain;" loading="lazy">
               </div>
               <h5 class="card-title">Airbnb Recognition</h5>
               <p class="card-text text-muted">Trusted and highly rated by guests on Airbnb platform.</p>
@@ -556,82 +558,82 @@
         <div class="gallery-scroll">
           <div class="gallery-item-scroll">
             <a href="assets/img/Entrance.jpg" data-bs-toggle="lightbox">
-              <img src="assets/img/Entrance.jpg" alt="Property Entrance">
+              <img src="assets/img/Entrance.jpg" alt="Property Entrance" loading="lazy">
             </a>
           </div>
           <div class="gallery-item-scroll">
             <a href="assets/img/Bedroom.jpg" data-bs-toggle="lightbox">
-              <img src="assets/img/Bedroom.jpg" alt="Bedroom">
+              <img src="assets/img/Bedroom.jpg" alt="Bedroom" loading="lazy">
             </a>
           </div>
           <div class="gallery-item-scroll">
             <a href="assets/img/Bathroom.jpg" data-bs-toggle="lightbox">
-              <img src="assets/img/Bathroom.jpg" alt="Bathroom">
+              <img src="assets/img/Bathroom.jpg" alt="Bathroom" loading="lazy">
             </a>
           </div>
           <div class="gallery-item-scroll">
             <a href="assets/img/tub.jpg" data-bs-toggle="lightbox">
-              <img src="assets/img/tub.jpg" alt="Luxury Bathtub">
+              <img src="assets/img/tub.jpg" alt="Luxury Bathtub" loading="lazy">
             </a>
           </div>
           <div class="gallery-item-scroll">
             <a href="assets/img/Bath_cqndle.jpg" data-bs-toggle="lightbox">
-              <img src="assets/img/Bath_cqndle.jpg" alt="Bath with Candles">
+              <img src="assets/img/Bath_cqndle.jpg" alt="Bath with Candles" loading="lazy">
             </a>
           </div>
           <div class="gallery-item-scroll">
             <a href="assets/img/Living Room_Day.jpg" data-bs-toggle="lightbox">
-              <img src="assets/img/Living Room_Day.jpg" alt="Living Room Day View">
+              <img src="assets/img/Living Room_Day.jpg" alt="Living Room Day View" loading="lazy">
             </a>
           </div>
           <div class="gallery-item-scroll">
             <a href="assets/img/Living Room_5.jpg" data-bs-toggle="lightbox">
-              <img src="assets/img/Living Room_5.jpg" alt="Living Room">
+              <img src="assets/img/Living Room_5.jpg" alt="Living Room" loading="lazy">
             </a>
           </div>
           <div class="gallery-item-scroll">
             <a href="assets/img/R_R09357.jpg" data-bs-toggle="lightbox">
-              <img src="assets/img/R_R09357.jpg" alt="Room Interior">
+              <img src="assets/img/R_R09357.jpg" alt="Room Interior" loading="lazy">
             </a>
           </div>
           <div class="gallery-item-scroll">
             <a href="assets/img/R_R09485.jpg" data-bs-toggle="lightbox">
-              <img src="assets/img/R_R09485.jpg" alt="Room View">
+              <img src="assets/img/R_R09485.jpg" alt="Room View" loading="lazy">
             </a>
           </div>
           <div class="gallery-item-scroll">
             <a href="assets/img/2.jpg" data-bs-toggle="lightbox">
-              <img src="assets/img/2.jpg" alt="Interior Detail">
+              <img src="assets/img/2.jpg" alt="Interior Detail" loading="lazy">
             </a>
           </div>
           <div class="gallery-item-scroll">
             <a href="assets/img/Breakfast.jpg" data-bs-toggle="lightbox">
-              <img src="assets/img/Breakfast.jpg" alt="Breakfast Area">
+              <img src="assets/img/Breakfast.jpg" alt="Breakfast Area" loading="lazy">
             </a>
           </div>
           <div class="gallery-item-scroll">
             <a href="assets/img/bbq.jpg" data-bs-toggle="lightbox">
-              <img src="assets/img/bbq.jpg" alt="BBQ Area">
+              <img src="assets/img/bbq.jpg" alt="BBQ Area" loading="lazy">
             </a>
           </div>
           <div class="gallery-item-scroll">
             <a href="assets/img/Olive.jpg" data-bs-toggle="lightbox">
-              <img src="assets/img/Olive.jpg" alt="Olive Apartment">
+              <img src="assets/img/Olive.jpg" alt="Olive Apartment" loading="lazy">
             </a>
           </div>
           <div class="gallery-item-scroll">
             <a href="assets/img/Beige.jpg" data-bs-toggle="lightbox">
-              <img src="assets/img/Beige.jpg" alt="Beige Apartment">
+              <img src="assets/img/Beige.jpg" alt="Beige Apartment" loading="lazy">
             </a>
           </div>
           <div class="gallery-item-scroll">
             <a href="assets/img/Turquoise.jpg" data-bs-toggle="lightbox">
-              <img src="assets/img/Turquoise.jpg" alt="Turquoise Apartment">
+              <img src="assets/img/Turquoise.jpg" alt="Turquoise Apartment" loading="lazy">
             </a>
           </div>
           <div class="gallery-item-scroll">
             <a href="assets/img/Dove.jpg" data-bs-toggle="lightbox">
-              <img src="assets/img/Dove.jpg" alt="Dove Apartment">
+              <img src="assets/img/Dove.jpg" alt="Dove Apartment" loading="lazy">
             </a>
           </div>
         </div>
