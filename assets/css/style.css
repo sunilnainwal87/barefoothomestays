@@ -75,7 +75,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(44, 95, 79, 0.75) 0%, rgba(35, 74, 61, 0.85) 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.6) 100%);
   z-index: 0;
 }
 
@@ -87,14 +87,14 @@ body {
 #hero h1 {
   font-size: 3.5rem;
   font-weight: 700;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5);
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
 }
 
 #hero p {
   font-size: 1.3rem;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 0, 0, 0.5);
   font-weight: 300;
   color: #fff;
 }
