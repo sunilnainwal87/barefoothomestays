@@ -384,6 +384,108 @@ h2::after {
 }
 
 /* -------------------------------------------------
+   Testimonials Section - Horizontal Scrollable
+   ------------------------------------------------- */
+.testimonial-scroll-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.testimonial-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1.5rem;
+  padding: 1rem 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--light-bg);
+}
+
+/* Custom scrollbar for webkit browsers */
+.testimonial-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+
+.testimonial-scroll::-webkit-scrollbar-track {
+  background: var(--light-bg);
+  border-radius: 10px;
+}
+
+.testimonial-scroll::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+}
+
+.testimonial-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+.testimonial-card {
+  flex: 0 0 auto;
+  width: 350px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+@media (max-width: 576px) {
+  .testimonial-card {
+    width: 300px;
+  }
+}
+
+@media (max-width: 375px) {
+  .testimonial-card {
+    width: 280px;
+  }
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.testimonial-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.testimonial-rating {
+  font-size: 1rem;
+}
+
+.testimonial-text {
+  flex: 1;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.testimonial-author {
+  border-top: 2px solid var(--light-bg);
+  padding-top: 1rem;
+}
+
+.testimonial-author strong {
+  color: var(--primary);
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-author .text-muted {
+  font-size: 0.85rem;
+}
+
+/* -------------------------------------------------
    Footer
    ------------------------------------------------- */
 footer {
