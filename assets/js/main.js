@@ -70,6 +70,7 @@ document.addEventListener('click', function (event) {
   
   let currentSlide = 0;
   const slideInterval = 6000; // 6 seconds per slide for elegant viewing
+  let intervalId = null;
   
   function showNextSlide() {
     // Remove active class from current slide
@@ -83,6 +84,30 @@ document.addEventListener('click', function (event) {
   }
   
   // Start the slideshow
-  setInterval(showNextSlide, slideInterval);
+  function startSlideshow() {
+    if (!intervalId) {
+      intervalId = setInterval(showNextSlide, slideInterval);
+    }
+  }
+  
+  // Stop the slideshow
+  function stopSlideshow() {
+    if (intervalId) {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+  }
+  
+  // Handle page visibility changes for better performance
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stopSlideshow();
+    } else {
+      startSlideshow();
+    }
+  });
+  
+  // Initialize slideshow
+  startSlideshow();
 })();
 

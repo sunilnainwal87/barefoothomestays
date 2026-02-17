@@ -92,7 +92,7 @@ body {
   background-position: center;
   opacity: 0;
   transition: opacity 2s ease-in-out;
-  animation: kenBurns 20s ease-in-out infinite;
+  animation-play-state: paused;
 }
 
 /* Ken Burns effect - subtle zoom and pan */
@@ -111,6 +111,8 @@ body {
 .hero-slide.active {
   opacity: 1;
   z-index: 1;
+  animation: kenBurns 20s ease-in-out infinite;
+  animation-play-state: running;
 }
 
 /* Elegant overlay for text readability */
