@@ -39,11 +39,27 @@ To make the website live:
 
 Before going fully live, update these placeholders:
 
-### 1. Google Maps (index.html, line ~207)
+### 1. ⭐ Google Search Console Setup (MOST IMPORTANT!)
+
+**Your site is ready for Google, but you need to complete verification:**
+
+1. **Quick Start**: Read `GOOGLE_SEARCH_SETUP.md`
+2. **Already verified? Need help with Step 4 (Submit Sitemap)?**
+   - 📖 Read: `SUBMIT_SITEMAP_GUIDE.md` (detailed walkthrough)
+   - 📄 Print: `SITEMAP_QUICK_REFERENCE.txt` (quick reference card)
+3. **Complete Guide**: See `SEO_GUIDE.md`
+
+**Critical Steps:**
+- ✅ Verify site ownership in Google Search Console
+- ✅ Submit sitemap.xml (Step 4 - see guides above!)
+- ✅ Request indexing for homepage
+- ✅ Create Google My Business listing
+
+### 2. Google Maps (index.html, line ~207)
 - Get your embed code from [Google Maps](https://www.google.com/maps)
 - Replace the incomplete URL with your actual location embed code
 
-### 2. Contact Form Setup (index.html, line ~344)
+### 3. Contact Form Setup (index.html, line ~344)
 
 **⚠️ IMPORTANT:** The contact form requires setup to work properly. Choose one of these options:
 

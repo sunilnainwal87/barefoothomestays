@@ -46,12 +46,26 @@ We've made your website ready for Google:
    - Wait 5-10 minutes
    - Click "Verify"
 
-### Step 2: Submit Your Sitemap
+### Step 2: Submit Your Sitemap ⭐ YOU ARE HERE
 
-Once verified:
-1. In Google Search Console, click "Sitemaps" in the left menu
-2. Enter: `sitemap.xml`
-3. Click "Submit"
+Once verified (you've completed Step 1! ✅):
+
+1. **In Google Search Console, look at the LEFT SIDEBAR**
+   - Find and click on **"Sitemaps"**
+   
+2. **In the "Add a new sitemap" text box**
+   - Type exactly: `sitemap.xml`
+   - (Do NOT type the full URL, just the filename)
+   
+3. **Click the blue "SUBMIT" button**
+
+4. **Verify Success**
+   - You should see "Success" status (green checkmark ✅)
+   - Or "Pending" (will change to Success in a few hours)
+   - Discovered URLs will show "7" (may take 24-48 hours)
+
+**📖 Need detailed step-by-step instructions?**
+**→ See SUBMIT_SITEMAP_GUIDE.md for screenshots-style walkthrough**
 
 ### Step 3: Request Indexing
 
