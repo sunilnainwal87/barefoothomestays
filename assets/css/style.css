@@ -64,24 +64,69 @@ body {
 }
 
 /* -------------------------------------------------
-   Hero Section - Enhanced Design
+   Hero Section - Premium Background Slideshow
    ------------------------------------------------- */
 #hero {
   position: relative;
-  background-attachment: fixed;
+  overflow: hidden;
 }
 
+/* Background slideshow container */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Individual background slides */
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  animation-play-state: paused;
+}
+
+/* Ken Burns effect - subtle zoom and pan */
+@keyframes kenBurns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.1) translate(-2%, -2%);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+  animation: kenBurns 20s ease-in-out infinite;
+  animation-play-state: running;
+}
+
+/* Elegant overlay for text readability */
 #hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(44, 95, 79, 0.75) 0%, rgba(35, 74, 61, 0.85) 100%);
-  z-index: 0;
+  background: linear-gradient(135deg, rgba(44, 95, 79, 0.7) 0%, rgba(35, 74, 61, 0.75) 50%, rgba(26, 26, 26, 0.6) 100%);
+  z-index: 2;
 }
 
 #hero > .container {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 #hero h1 {
