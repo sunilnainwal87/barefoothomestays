@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Barefoot Homestays – Your Home Away From Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Preload critical hero image for faster initial render -->
   <link rel="preload" as="image" href="assets/img/Entrance.jpg">
@@ -12,6 +11,89 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <!-- Custom styles -->
   <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- Structured Data / Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Barefoot Homestays",
+    "image": [
+      "https://www.barefoothomestays.com/Entrance.jpg",
+      "https://www.barefoothomestays.com/Bedroom.jpg",
+      "https://www.barefoothomestays.com/Living Room_5.jpg"
+    ],
+    "@id": "https://www.barefoothomestays.com",
+    "url": "https://www.barefoothomestays.com",
+    "telephone": "+91-XXXXXXXXXX",
+    "email": "barefoothomestays1@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Dhikuli Ramnagar Nainital",
+      "addressLocality": "Ramnagar",
+      "addressRegion": "Uttarakhand",
+      "postalCode": "244715",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 29.3912,
+      "longitude": 79.1229
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "priceRange": "$$",
+    "description": "Experience luxury homestay living at Barefoot Homestays, just 950 meters from Jim Corbett National Park in Ramnagar, Uttarakhand. Fully-equipped apartments with modern amenities, mountain views, and wildlife sightings.",
+    "sameAs": [
+      "https://www.facebook.com/people/Barefoot-Homestays/100090769633894/",
+      "https://www.instagram.com/barefoothomestays/"
+    ],
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Wi-Fi",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Air Conditioning",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Kitchen",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Smart TV",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Bathtub",
+        "value": true
+      }
+    ],
+    "hasMap": "https://goo.gl/maps/example",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5"
+    }
+  }
+  </script>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="70" tabindex="0">
 
@@ -52,7 +134,7 @@
     </div>
     
     <div class="container">
-      <h1 class="display-4 fw-bold">Welcome to Barefoot Homestays</h1>
+      <h1 class="display-4 fw-bold">Barefoot Homestays - Luxury Stay near Jim Corbett, Ramnagar</h1>
       <p class="lead mb-4">Your luxury homestay near Jim Corbett National Park – where comfort meets wilderness.</p>
       <a href="#rooms" class="btn btn-outline-light btn-lg me-2">Explore Apartments</a>
       <a href="#contact" class="btn btn-primary btn-lg">Book Now</a>
@@ -741,7 +823,7 @@
       <h2 class="text-center mb-4">Where We Are</h2>
       <p class="text-center mb-4">
         <strong>Barefoot Homestays</strong><br>
-        Dhikuli Ramangar Nainital Uttrakhand, RaMnagar 244715<br>
+        Dhikuli Ramnagar Nainital Uttarakhand, Ramnagar 244715<br>
         <small class="text-muted">Coordinates: 29.4768056, 79.1486389</small>
       </p>
       <div class="text-center mb-3">
