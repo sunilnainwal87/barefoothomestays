@@ -9,16 +9,34 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://www.barefoothomestays.com/Entrance.jpg</image:loc>
-      <image:title>Barefoot Homestays Entrance</image:title>
+      <image:loc>https://www.barefoothomestays.com/assets/img/Entrance.jpg</image:loc>
+      <image:title>Barefoot Homestays - Property Entrance near Jim Corbett</image:title>
+      <image:caption>Entrance to Barefoot Homestays, Dhikuli, Ramnagar, Uttarakhand</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://www.barefoothomestays.com/Bedroom.jpg</image:loc>
-      <image:title>Barefoot Homestays Bedroom</image:title>
+      <image:loc>https://www.barefoothomestays.com/assets/img/Bedroom.jpg</image:loc>
+      <image:title>Luxury Bedroom at Barefoot Homestays</image:title>
+      <image:caption>King-size bedroom with luxury amenities at Barefoot Homestays</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://www.barefoothomestays.com/Living%20Room_5.jpg</image:loc>
-      <image:title>Barefoot Homestays Living Room</image:title>
+      <image:loc>https://www.barefoothomestays.com/assets/img/Living%20Room_Day.jpg</image:loc>
+      <image:title>Living Room at Barefoot Homestays</image:title>
+      <image:caption>Spacious living room in our apartments near Jim Corbett National Park</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.barefoothomestays.com/assets/img/Bathroom.jpg</image:loc>
+      <image:title>Luxury Bathroom at Barefoot Homestays</image:title>
+      <image:caption>Ensuite luxury bathroom with bathtub at Barefoot Homestays</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.barefoothomestays.com/assets/img/Olive.jpg</image:loc>
+      <image:title>Olive Apartment - Barefoot Homestays</image:title>
+      <image:caption>Olive one-bedroom apartment at Barefoot Homestays, Ramnagar</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.barefoothomestays.com/assets/img/Turquoise.jpg</image:loc>
+      <image:title>Turquoise Apartment - Barefoot Homestays</image:title>
+      <image:caption>Turquoise one-bedroom apartment at Barefoot Homestays, Ramnagar</image:caption>
     </image:image>
   </url>
   
