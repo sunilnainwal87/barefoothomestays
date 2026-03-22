@@ -2,81 +2,125 @@
  * Weather widget for Barefoot Homestays
  * Location: Dhikuli, Ramnagar, Uttarakhand
  * Coordinates: 29.4768056, 79.1486389
- * Uses the free Open-Meteo API (https://open-meteo.com/) – no API key required.
+ *
+ * Uses wttr.in (https://wttr.in) — MIT-licensed, free for commercial use.
+ * Attribution: Weather data from wttr.in (link displayed in the section).
+ *
+ * ETHICS & LEGAL NOTE:
+ * wttr.in is MIT-licensed and explicitly allows commercial use with attribution.
+ * No API key is required. No user data is collected or transmitted — only the
+ * property's fixed geographic coordinates are sent to the weather service.
+ * Attribution to wttr.in is displayed on the page as required by the licence.
  */
 (function () {
   'use strict';
 
-  const LAT = 29.4768056;
-  const LON = 79.1486389;
-  const API_URL =
-    'https://api.open-meteo.com/v1/forecast' +
-    '?latitude=' + LAT +
-    '&longitude=' + LON +
-    '&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m' +
-    '&daily=weather_code,temperature_2m_max,temperature_2m_min' +
-    '&timezone=Asia%2FKolkata' +
-    '&forecast_days=7';
+  var LAT = 29.4768056;
+  var LON = 79.1486389;
+  // wttr.in JSON API: returns current conditions + 3-day forecast
+  var API_URL = 'https://wttr.in/' + LAT + ',' + LON + '?format=j1';
 
-  // WMO Weather interpretation codes → { description, emoji }
-  function interpretWeatherCode(code) {
-    if (code === 0)              return { desc: 'Clear Sky',            emoji: '☀️' };
-    if (code === 1)              return { desc: 'Mainly Clear',         emoji: '🌤️' };
-    if (code === 2)              return { desc: 'Partly Cloudy',        emoji: '⛅' };
-    if (code === 3)              return { desc: 'Overcast',             emoji: '☁️' };
-    if (code === 45 || code === 48) return { desc: 'Foggy',            emoji: '🌫️' };
-    if (code >= 51 && code <= 55)  return { desc: 'Drizzle',           emoji: '🌦️' };
-    if (code >= 61 && code <= 65)  return { desc: 'Rain',              emoji: '🌧️' };
-    if (code >= 71 && code <= 75)  return { desc: 'Snow',              emoji: '❄️' };
-    if (code === 77)               return { desc: 'Snow Grains',        emoji: '🌨️' };
-    if (code >= 80 && code <= 82)  return { desc: 'Rain Showers',      emoji: '🌦️' };
-    if (code >= 85 && code <= 86)  return { desc: 'Snow Showers',      emoji: '🌨️' };
-    if (code === 95)               return { desc: 'Thunderstorm',       emoji: '⛈️' };
-    if (code === 96 || code === 99) return { desc: 'Thunderstorm & Hail', emoji: '⛈️' };
-    return { desc: 'Unknown', emoji: '🌡️' };
+  // Map WorldWeatherOnline / wttr.in weather codes to emoji
+  function weatherCodeEmoji(code) {
+    code = parseInt(code, 10);
+    if (code === 113)                           return '☀️';  // Clear/Sunny
+    if (code === 116)                           return '⛅';  // Partly cloudy
+    if (code === 119 || code === 122)           return '☁️';  // Cloudy/Overcast
+    if (code === 143 || code === 248 || code === 260) return '🌫️'; // Mist/Fog
+    if (code === 200)                           return '⛈️';  // Thundery outbreaks
+    if (code === 227 || code === 230)           return '❄️';  // Blowing snow/Blizzard
+    if (code >= 176 && code <= 185)             return '🌦️';  // Patchy rain/sleet/drizzle
+    if (code >= 263 && code <= 284)             return '🌦️';  // Drizzle
+    if (code >= 293 && code <= 308)             return '🌧️';  // Rain
+    if (code >= 311 && code <= 320)             return '🌨️';  // Sleet
+    if (code >= 323 && code <= 338)             return '❄️';  // Snow
+    if (code === 350)                           return '🌨️';  // Ice pellets
+    if (code >= 353 && code <= 359)             return '🌦️';  // Rain showers
+    if (code >= 362 && code <= 377)             return '🌨️';  // Sleet/snow/ice showers
+    if (code >= 386 && code <= 395)             return '⛈️';  // Thunder
+    return '🌡️';
   }
 
   function shortDayName(dateStr) {
-    // dateStr from Open-Meteo is always YYYY-MM-DD (local date, no time component)
+    // dateStr from wttr.in is always YYYY-MM-DD
     var parts = dateStr.split('-');
     var d = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
     return d.toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short' });
   }
 
-  function renderCurrentWeather(current) {
-    var weather = interpretWeatherCode(current.weather_code);
-    document.getElementById('weather-icon-main').textContent = weather.emoji;
-    document.getElementById('weather-temp').textContent = Math.round(current.temperature_2m) + '°C';
-    document.getElementById('weather-desc').textContent = weather.desc;
-    document.getElementById('weather-humidity').textContent = current.relative_humidity_2m + '%';
-    document.getElementById('weather-wind').textContent = Math.round(current.wind_speed_10m) + ' km/h';
-    document.getElementById('weather-feels').textContent = Math.round(current.apparent_temperature) + '°C';
+  function setText(id, text) {
+    document.getElementById(id).textContent = text;
+  }
+
+  function renderCurrentWeather(cur) {
+    setText('weather-icon-main', weatherCodeEmoji(cur.weatherCode));
+    setText('weather-temp',      cur.temp_C + '°C');
+    setText('weather-desc',      cur.weatherDesc[0].value);
+    setText('weather-humidity',  cur.humidity + '%');
+    setText('weather-wind',      cur.windspeedKmph + ' km/h');
+    setText('weather-feels',     cur.FeelsLikeC + '°C');
 
     document.getElementById('weather-loading').style.display = 'none';
     document.getElementById('weather-current-content').style.display = '';
   }
 
-  function renderForecast(daily) {
+  function makeForecastCard(day) {
+    // Use the noon slot: wttr.in returns 8 three-hourly entries per day for hours
+    // 0, 3, 6, 9, 12, 15, 18, 21 (indices 0–7); index 4 = hour 12 (noon).
+    var noon = day.hourly[4] || day.hourly[0];
+
+    var col = document.createElement('div');
+    col.className = 'col-6 col-sm-4 col-md-3 col-lg';
+
+    var card = document.createElement('div');
+    card.className = 'card text-center shadow-sm h-100 weather-forecast-card';
+
+    var body = document.createElement('div');
+    body.className = 'card-body p-2';
+
+    var dateDiv = document.createElement('div');
+    dateDiv.className = 'small text-muted mb-1';
+    dateDiv.textContent = shortDayName(day.date);
+
+    var iconDiv = document.createElement('div');
+    iconDiv.className = 'weather-icon-sm';
+    iconDiv.textContent = weatherCodeEmoji(noon.weatherCode);
+
+    var descDiv = document.createElement('div');
+    descDiv.className = 'small fw-semibold mt-1';
+    descDiv.textContent = noon.weatherDesc[0].value;
+
+    var tempDiv = document.createElement('div');
+    tempDiv.className = 'mt-1';
+
+    var maxSpan = document.createElement('span');
+    maxSpan.className = 'text-danger fw-bold';
+    maxSpan.textContent = day.maxtempC + '°';
+
+    var sep = document.createTextNode(' / ');
+
+    var minSpan = document.createElement('span');
+    minSpan.className = 'text-primary';
+    minSpan.textContent = day.mintempC + '°';
+
+    tempDiv.appendChild(maxSpan);
+    tempDiv.appendChild(sep);
+    tempDiv.appendChild(minSpan);
+
+    body.appendChild(dateDiv);
+    body.appendChild(iconDiv);
+    body.appendChild(descDiv);
+    body.appendChild(tempDiv);
+    card.appendChild(body);
+    col.appendChild(card);
+    return col;
+  }
+
+  function renderForecast(days) {
     var container = document.getElementById('weather-forecast-cards');
-    container.innerHTML = '';
-    for (var i = 0; i < daily.time.length; i++) {
-      var weather = interpretWeatherCode(daily.weather_code[i]);
-      var card = document.createElement('div');
-      card.className = 'col-6 col-sm-4 col-md-3 col-lg';
-      card.innerHTML =
-        '<div class="card text-center shadow-sm h-100 weather-forecast-card">' +
-          '<div class="card-body p-2">' +
-            '<div class="small text-muted mb-1">' + shortDayName(daily.time[i]) + '</div>' +
-            '<div class="weather-icon-sm">' + weather.emoji + '</div>' +
-            '<div class="small fw-semibold mt-1">' + weather.desc + '</div>' +
-            '<div class="mt-1">' +
-              '<span class="text-danger fw-bold">' + Math.round(daily.temperature_2m_max[i]) + '°</span>' +
-              ' / ' +
-              '<span class="text-primary">' + Math.round(daily.temperature_2m_min[i]) + '°</span>' +
-            '</div>' +
-          '</div>' +
-        '</div>';
-      container.appendChild(card);
+    while (container.firstChild) { container.removeChild(container.firstChild); }
+    for (var i = 0; i < days.length; i++) {
+      container.appendChild(makeForecastCard(days[i]));
     }
     document.getElementById('weather-forecast').style.display = '';
   }
@@ -93,8 +137,8 @@
         return response.json();
       })
       .then(function (data) {
-        renderCurrentWeather(data.current);
-        renderForecast(data.daily);
+        renderCurrentWeather(data.current_condition[0]);
+        renderForecast(data.weather);
       })
       .catch(function (err) {
         console.error('Weather widget: failed to load weather data.', err);
