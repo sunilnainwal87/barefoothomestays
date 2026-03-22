@@ -598,3 +598,41 @@ footer a:hover {
     padding: 3rem 0;
   }
 }
+
+/* -------------------------------------------------
+   Weather Section
+   ------------------------------------------------- */
+#weather {
+  background: linear-gradient(135deg, #e8f5f0 0%, #f0f8ff 100%);
+}
+
+.weather-current-card {
+  border: none;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.weather-icon-lg {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.weather-icon-sm {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.weather-stat-box {
+  background: var(--light-bg);
+}
+
+.weather-forecast-card {
+  border-radius: 12px;
+  border: 1px solid #e8f0ed;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.weather-forecast-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--card-shadow-hover);
+}

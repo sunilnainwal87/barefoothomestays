@@ -223,6 +223,7 @@
           <li class="nav-item"><a class="nav-link" href="#rooms">Apartments</a></li>
           <li class="nav-item"><a class="nav-link" href="#amenities">Amenities</a></li>
           <li class="nav-item"><a class="nav-link" href="#attractions">Attractions</a></li>
+          <li class="nav-item"><a class="nav-link" href="#weather">Weather</a></li>
           <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
           <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
           <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
@@ -967,6 +968,73 @@
     </div>
   </section>
 
+  <!-- ==== WEATHER ==== -->
+  <section id="weather" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-2">Weather around Barefoot Homestays</h2>
+      <p class="text-center text-muted mb-5">
+        <i class="fa-solid fa-location-dot me-1"></i>Dhikuli, Ramnagar, Uttarakhand
+      </p>
+
+      <!-- Current Weather Card -->
+      <div id="weather-current" class="mb-4">
+        <div class="d-flex justify-content-center">
+          <div class="card shadow-sm weather-current-card text-center p-4" style="min-width:280px;max-width:420px;width:100%;">
+            <div id="weather-loading" class="py-3">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading weather…</span>
+              </div>
+              <p class="mt-2 text-muted">Fetching current weather…</p>
+            </div>
+            <div id="weather-current-content" style="display:none;">
+              <div class="weather-icon-lg mb-2" id="weather-icon-main"></div>
+              <div class="display-5 fw-bold text-primary" id="weather-temp"></div>
+              <div class="fs-5 text-muted mb-3" id="weather-desc"></div>
+              <div class="row g-2 text-center mt-2">
+                <div class="col-4">
+                  <div class="weather-stat-box p-2 rounded">
+                    <i class="fa-solid fa-droplet text-info"></i>
+                    <div class="small text-muted">Humidity</div>
+                    <div class="fw-semibold" id="weather-humidity"></div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="weather-stat-box p-2 rounded">
+                    <i class="fa-solid fa-wind text-secondary"></i>
+                    <div class="small text-muted">Wind</div>
+                    <div class="fw-semibold" id="weather-wind"></div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="weather-stat-box p-2 rounded">
+                    <i class="fa-solid fa-temperature-half text-danger"></i>
+                    <div class="small text-muted">Feels Like</div>
+                    <div class="fw-semibold" id="weather-feels"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="weather-error" style="display:none;" class="py-3 text-danger">
+              <i class="fa-solid fa-triangle-exclamation fa-2x mb-2"></i>
+              <p>Unable to load weather data. Please try again later.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3-Day Forecast -->
+      <div id="weather-forecast" style="display:none;">
+        <h5 class="text-center text-muted mb-3">3-Day Forecast</h5>
+        <div class="row g-2 justify-content-center" id="weather-forecast-cards"></div>
+      </div>
+
+      <p class="text-center mt-4 small text-muted">
+        <i class="fa-solid fa-circle-info me-1"></i>
+        Weather data provided by <a href="https://wttr.in/" target="_blank" rel="noopener" class="text-muted">wttr.in</a> (MIT licence, free for commercial use). Updated on page load.
+      </p>
+    </div>
+  </section>
+
   <!-- ==== LOCATION ==== -->
   <section id="location" class="py-5 bg-light">
     <div class="container">
@@ -1133,5 +1201,6 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/weather.js"></script>
 </body>
 </html>
