@@ -971,52 +971,102 @@
   <!-- ==== WEATHER ==== -->
   <section id="weather" class="py-5">
     <div class="container">
-      <h2 class="text-center mb-2">Weather around Barefoot Homestays</h2>
+      <h2 class="text-center mb-2">Weather &amp; Air Quality around Barefoot Homestays</h2>
       <p class="text-center text-muted mb-5">
         <i class="fa-solid fa-location-dot me-1"></i>Dhikuli, Ramnagar, Uttarakhand
       </p>
 
-      <!-- Current Weather Card -->
-      <div id="weather-current" class="mb-4">
-        <div class="d-flex justify-content-center">
-          <div class="card shadow-sm weather-current-card text-center p-4" style="min-width:280px;max-width:420px;width:100%;">
-            <div id="weather-loading" class="py-3">
-              <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading weather…</span>
+      <!-- Weather & AQI Cards -->
+      <div class="row g-4 justify-content-center mb-4">
+        <!-- Current Weather Card -->
+        <div class="col-12 col-sm-auto">
+          <div id="weather-current" class="h-100">
+            <div class="card shadow-sm weather-current-card text-center p-4 h-100" style="min-width:260px;max-width:360px;width:100%;">
+              <div id="weather-loading" class="py-3">
+                <div class="spinner-border text-primary" role="status">
+                  <span class="visually-hidden">Loading weather…</span>
+                </div>
+                <p class="mt-2 text-muted">Fetching current weather…</p>
               </div>
-              <p class="mt-2 text-muted">Fetching current weather…</p>
-            </div>
-            <div id="weather-current-content" style="display:none;">
-              <div class="weather-icon-lg mb-2" id="weather-icon-main"></div>
-              <div class="display-5 fw-bold text-primary" id="weather-temp"></div>
-              <div class="fs-5 text-muted mb-3" id="weather-desc"></div>
-              <div class="row g-2 text-center mt-2">
-                <div class="col-4">
-                  <div class="weather-stat-box p-2 rounded">
-                    <i class="fa-solid fa-droplet text-info"></i>
-                    <div class="small text-muted">Humidity</div>
-                    <div class="fw-semibold" id="weather-humidity"></div>
+              <div id="weather-current-content" style="display:none;">
+                <div class="weather-icon-lg mb-2" id="weather-icon-main"></div>
+                <div class="display-5 fw-bold text-primary" id="weather-temp"></div>
+                <div class="fs-5 text-muted mb-3" id="weather-desc"></div>
+                <div class="row g-2 text-center mt-2">
+                  <div class="col-4">
+                    <div class="weather-stat-box p-2 rounded">
+                      <i class="fa-solid fa-droplet text-info"></i>
+                      <div class="small text-muted">Humidity</div>
+                      <div class="fw-semibold" id="weather-humidity"></div>
+                    </div>
                   </div>
-                </div>
-                <div class="col-4">
-                  <div class="weather-stat-box p-2 rounded">
-                    <i class="fa-solid fa-wind text-secondary"></i>
-                    <div class="small text-muted">Wind</div>
-                    <div class="fw-semibold" id="weather-wind"></div>
+                  <div class="col-4">
+                    <div class="weather-stat-box p-2 rounded">
+                      <i class="fa-solid fa-wind text-secondary"></i>
+                      <div class="small text-muted">Wind</div>
+                      <div class="fw-semibold" id="weather-wind"></div>
+                    </div>
                   </div>
-                </div>
-                <div class="col-4">
-                  <div class="weather-stat-box p-2 rounded">
-                    <i class="fa-solid fa-temperature-half text-danger"></i>
-                    <div class="small text-muted">Feels Like</div>
-                    <div class="fw-semibold" id="weather-feels"></div>
+                  <div class="col-4">
+                    <div class="weather-stat-box p-2 rounded">
+                      <i class="fa-solid fa-temperature-half text-danger"></i>
+                      <div class="small text-muted">Feels Like</div>
+                      <div class="fw-semibold" id="weather-feels"></div>
+                    </div>
                   </div>
                 </div>
               </div>
+              <div id="weather-error" style="display:none;" class="py-3 text-danger">
+                <i class="fa-solid fa-triangle-exclamation fa-2x mb-2"></i>
+                <p>Unable to load weather data. Please try again later.</p>
+              </div>
             </div>
-            <div id="weather-error" style="display:none;" class="py-3 text-danger">
-              <i class="fa-solid fa-triangle-exclamation fa-2x mb-2"></i>
-              <p>Unable to load weather data. Please try again later.</p>
+          </div>
+        </div>
+
+        <!-- Air Quality Index Card -->
+        <div class="col-12 col-sm-auto">
+          <div id="weather-aqi" class="h-100">
+            <div class="card shadow-sm aqi-card text-center p-4 h-100" style="min-width:260px;max-width:360px;width:100%;">
+              <div id="aqi-loading" class="py-3">
+                <div class="spinner-border text-success" role="status">
+                  <span class="visually-hidden">Loading air quality…</span>
+                </div>
+                <p class="mt-2 text-muted">Fetching air quality…</p>
+              </div>
+              <div id="aqi-content" style="display:none;">
+                <div class="d-flex align-items-center justify-content-center mb-1">
+                  <i class="fa-solid fa-lungs me-2 fs-4" id="aqi-icon"></i>
+                  <h6 class="mb-0 fw-semibold text-uppercase small">Air Quality Index</h6>
+                </div>
+                <div class="aqi-number mb-1">
+                  <span id="aqi-value" class="display-4 fw-bold"></span>
+                  <span class="small text-muted ms-1">US AQI</span>
+                </div>
+                <div class="mb-3">
+                  <span id="aqi-badge" class="aqi-status-badge px-3 py-1 rounded-pill fw-semibold small"></span>
+                </div>
+                <div class="row g-2 text-center mt-auto">
+                  <div class="col-6">
+                    <div class="weather-stat-box p-2 rounded">
+                      <i class="fa-solid fa-smog text-secondary"></i>
+                      <div class="small text-muted">PM2.5</div>
+                      <div class="fw-semibold" id="aqi-pm25"></div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="weather-stat-box p-2 rounded">
+                      <i class="fa-solid fa-smog text-secondary"></i>
+                      <div class="small text-muted">PM10</div>
+                      <div class="fw-semibold" id="aqi-pm10"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="aqi-error" style="display:none;" class="py-3 text-danger">
+                <i class="fa-solid fa-triangle-exclamation fa-2x mb-2"></i>
+                <p>Unable to load air quality data. Please try again later.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -1030,7 +1080,9 @@
 
       <p class="text-center mt-4 small text-muted">
         <i class="fa-solid fa-circle-info me-1"></i>
-        Weather data provided by <a href="https://wttr.in/" target="_blank" rel="noopener" class="text-muted">wttr.in</a> (MIT licence, free for commercial use). Updated on page load.
+        Weather data: <a href="https://wttr.in/" target="_blank" rel="noopener" class="text-muted">wttr.in</a> (MIT licence).
+        Air quality: <a href="https://open-meteo.com/" target="_blank" rel="noopener" class="text-muted">Open-Meteo</a> (CC BY 4.0).
+        Both free for commercial use. Updated on page load.
       </p>
     </div>
   </section>

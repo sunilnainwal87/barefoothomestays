@@ -1,16 +1,17 @@
 /**
- * Weather widget for Barefoot Homestays
+ * Weather & Air Quality widget for Barefoot Homestays
  * Location: Dhikuli, Ramnagar, Uttarakhand
  * Coordinates: 29.4768056, 79.1486389
  *
- * Uses wttr.in (https://wttr.in) — MIT-licensed, free for commercial use.
- * Attribution: Weather data from wttr.in (link displayed in the section).
+ * Weather: wttr.in (https://wttr.in) — MIT-licensed, free for commercial use.
+ * AQI:     Open-Meteo Air Quality API (https://open-meteo.com) — free for
+ *          commercial use under CC BY 4.0. No API key required. HTTPS only.
  *
  * ETHICS & LEGAL NOTE:
- * wttr.in is MIT-licensed and explicitly allows commercial use with attribution.
- * No API key is required. No user data is collected or transmitted — only the
- * property's fixed geographic coordinates are sent to the weather service.
- * Attribution to wttr.in is displayed on the page as required by the licence.
+ * Both data sources are open-source and explicitly permit commercial use with
+ * attribution. No API key is required and no user data is collected or
+ * transmitted — only the property's fixed geographic coordinates are sent to
+ * each service. Attributions are displayed on the page as required.
  */
 (function () {
   'use strict';
@@ -19,6 +20,9 @@
   var LON = 79.1486389;
   // wttr.in JSON API: returns current conditions + 3-day forecast
   var API_URL = 'https://wttr.in/' + LAT + ',' + LON + '?format=j1';
+  // Open-Meteo Air Quality API: US AQI + PM2.5 + PM10, current only
+  var AQI_API_URL = 'https://air-quality-api.open-meteo.com/v1/air-quality' +
+    '?latitude=' + LAT + '&longitude=' + LON + '&current=us_aqi,pm2_5,pm10';
 
   // Map WorldWeatherOnline / wttr.in weather codes to emoji
   function weatherCodeEmoji(code) {
@@ -130,6 +134,78 @@
     document.getElementById('weather-error').style.display = '';
   }
 
+  // ----- AQI (Air Quality Index) -----
+
+  // US AQI categories: [maxValue, label, textColor, bgColor]
+  var AQI_CATEGORIES = [
+    [  50, 'Good',                           '#1a7f37', '#dafbe1'],
+    [ 100, 'Moderate',                       '#7d6514', '#fdf8c2'],
+    [ 150, 'Unhealthy for Sensitive Groups', '#c85000', '#fff1d6'],
+    [ 200, 'Unhealthy',                      '#c11c1c', '#ffeaea'],
+    [ 300, 'Very Unhealthy',                 '#6b21a8', '#f3e8ff'],
+    [Infinity, 'Hazardous',                  '#7f1d1d', '#fee2e2']
+  ];
+
+  // Returns category metadata for a US AQI value.
+  function aqiCategory(aqi) {
+    aqi = parseInt(aqi, 10);
+    for (var i = 0; i < AQI_CATEGORIES.length; i++) {
+      if (aqi <= AQI_CATEGORIES[i][0]) {
+        return { label: AQI_CATEGORIES[i][1], color: AQI_CATEGORIES[i][2], bg: AQI_CATEGORIES[i][3] };
+      }
+    }
+    return { label: AQI_CATEGORIES[AQI_CATEGORIES.length - 1][1], color: AQI_CATEGORIES[AQI_CATEGORIES.length - 1][2], bg: AQI_CATEGORIES[AQI_CATEGORIES.length - 1][3] };
+  }
+
+  function renderAQI(current) {
+    var aqi = parseInt(current.us_aqi, 10);
+    var cat = aqiCategory(aqi);
+
+    var valueEl = document.getElementById('aqi-value');
+    valueEl.textContent = aqi;
+    valueEl.style.color = cat.color;
+
+    var badgeEl = document.getElementById('aqi-badge');
+    badgeEl.textContent = cat.label;
+    badgeEl.style.backgroundColor = cat.bg;
+    badgeEl.style.color = cat.color;
+    badgeEl.style.border = '1px solid ' + cat.color;
+
+    document.getElementById('aqi-icon').style.color = cat.color;
+
+    var pm25 = parseFloat(current.pm2_5);
+    var pm10  = parseFloat(current.pm10);
+    setText('aqi-pm25', (isNaN(pm25) ? '—' : pm25.toFixed(1)) + ' µg/m³');
+    setText('aqi-pm10',  (isNaN(pm10)  ? '—' : pm10.toFixed(1))  + ' µg/m³');
+
+    document.getElementById('aqi-loading').style.display = 'none';
+    document.getElementById('aqi-content').style.display = '';
+  }
+
+  function showAQIError() {
+    document.getElementById('aqi-loading').style.display = 'none';
+    document.getElementById('aqi-error').style.display = '';
+  }
+
+  function loadAQI() {
+    fetch(AQI_API_URL)
+      .then(function (response) {
+        if (!response.ok) throw new Error('AQI network response was not ok');
+        return response.json();
+      })
+      .then(function (data) {
+        if (data && data.current) {
+          renderAQI(data.current);
+        } else {
+          showAQIError();
+        }
+      })
+      .catch(function (err) {
+        console.error('AQI widget: failed to load air quality data.', err);
+        showAQIError();
+      });
+  }
+
   function loadWeather() {
     fetch(API_URL)
       .then(function (response) {
@@ -146,9 +222,14 @@
       });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadWeather);
-  } else {
+  function init() {
     loadWeather();
+    loadAQI();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();
